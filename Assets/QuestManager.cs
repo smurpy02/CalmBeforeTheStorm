@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class QuestManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class QuestManager : MonoBehaviour
 
     void Start()
     {
-        quests = FindObjectsOfType<Quest>().ToList();
+        quests = FindObjectsOfType<Quest>().ToList().OrderBy(x => Random.value).ToList(); ;
         RefreshQuests();
     }
 
