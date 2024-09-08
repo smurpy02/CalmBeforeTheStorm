@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public MoveCloud cloud;
     public Transform cloudTransform;
     public GameObject rain;
+    public GameObject endPanel;
 
     public int rounds;
     public float roundTime;
@@ -36,11 +37,18 @@ public class GameManager : MonoBehaviour
     void EndRound()
     {
         isPlaying = false;
-        round++;
-        UpgradeUI.SetActive(true);
         cloud.enabled = false;
         cloud.body.velocity = Vector3.zero;
         rain.SetActive(false);
+
+        if (round < rounds)
+        {
+            round++;
+            UpgradeUI.SetActive(true);
+            return;
+        }
+
+        endPanel.SetActive(true);
     }
 
     void Update()
@@ -50,7 +58,7 @@ public class GameManager : MonoBehaviour
         timerText.text = timer.ToString("0.0");
         roundText.text = round + "/" + rounds;
 
-        if(timer <= 0 && isPlaying)
+        if (timer <= 0 && isPlaying)
         {
             EndRound();
         }
