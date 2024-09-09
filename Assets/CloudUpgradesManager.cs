@@ -55,5 +55,10 @@ public class CloudUpgradesManager : MonoBehaviour
         {
             flooding.SetActive(true);
         }
+
+        if (UpgradeManager.upgrades.Contains("Fire"))
+        {
+
+        }
     }
 }
