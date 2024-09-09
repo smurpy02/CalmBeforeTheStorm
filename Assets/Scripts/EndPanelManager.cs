@@ -15,6 +15,9 @@ public class EndPanelManager : MonoBehaviour
 
     public void Retry()
     {
+        ScoreKeeper.ResetScore();
+        UpgradeManager.upgrades.Clear();
+        GameManager.StopGame();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 }

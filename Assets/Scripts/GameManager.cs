@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public MoveCloud cloud;
     public Transform cloudTransform;
     public GameObject rain;
+    public GameObject lightning;
+    public GameObject flooding;
+
     public GameObject endPanel;
 
     public int rounds;
@@ -20,6 +23,11 @@ public class GameManager : MonoBehaviour
     float timer;
 
     static bool isPlaying = false;
+
+    public static void StopGame()
+    {
+        isPlaying = false;
+    }
 
     public void StartGame()
     {
@@ -32,6 +40,8 @@ public class GameManager : MonoBehaviour
         cloud.enabled = true;
         timer = roundTime;
         rain.SetActive(true);
+        lightning.SetActive(true);
+        flooding.SetActive(true);
     }
 
     void EndRound()
@@ -40,6 +50,8 @@ public class GameManager : MonoBehaviour
         cloud.enabled = false;
         cloud.body.velocity = Vector3.zero;
         rain.SetActive(false);
+        lightning.SetActive(false);
+        flooding.SetActive(false);
 
         if (round < rounds)
         {

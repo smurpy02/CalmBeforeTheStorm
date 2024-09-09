@@ -20,6 +20,10 @@ public class CloudUpgradesManager : MonoBehaviour
     public DoDamage rainDamage;
     public float heavyRainDamage;
 
+    public GameObject lightning;
+
+    public GameObject flooding;
+
     // Update is called once per frame
     void Update()
     {
@@ -40,6 +44,16 @@ public class CloudUpgradesManager : MonoBehaviour
         {
             heavyRainParts.SetActive(true);
             rainDamage.damage = heavyRainDamage;
+        }
+
+        if (UpgradeManager.upgrades.Contains("Lightning"))
+        {
+            lightning.SetActive(true);
+        }
+
+        if (UpgradeManager.upgrades.Contains("Flooding"))
+        {
+            flooding.SetActive(true);
         }
     }
 }
