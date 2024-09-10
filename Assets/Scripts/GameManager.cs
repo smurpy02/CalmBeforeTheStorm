@@ -17,10 +17,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject endPanel;
 
-    public int rounds;
-    public float roundTime;
+    public float gameTime;
 
-    int round = 1;
     float timer;
 
     static bool isPlaying = false;
@@ -39,7 +37,7 @@ public class GameManager : MonoBehaviour
     {
         isPlaying = true;
         cloud.enabled = true;
-        timer = roundTime;
+        timer = gameTime;
         rain.SetActive(true);
         upgrades.SetActive(true);
     }
@@ -52,13 +50,6 @@ public class GameManager : MonoBehaviour
         rain.SetActive(false);
         upgrades.SetActive(false);
 
-        //if (round < rounds)
-        //{
-        //    round++;
-        //    UpgradeUI.SetActive(true);
-        //    return;
-        //}
-
         endPanel.SetActive(true);
     }
 
@@ -67,7 +58,6 @@ public class GameManager : MonoBehaviour
         timer -= Time.deltaTime;
         timer = Mathf.Clamp(timer, 0, Mathf.Infinity);
         timerText.text = timer.ToString("0.0");
-        roundText.text = round + "/" + rounds;
 
         if (timer <= 0 && isPlaying)
         {

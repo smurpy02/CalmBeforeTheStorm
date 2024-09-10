@@ -23,7 +23,7 @@ public class Destructable : MonoBehaviour
 
     public void Damage(float damage)
     {
-        building.DOShakePosition(0.15f, 0.1f);
+        building.DOShakePosition(0.15f, damage * 0.8f);
 
         health -= damage;
 

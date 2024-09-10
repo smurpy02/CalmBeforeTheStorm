@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe686f1dc595daa4ea64bbbb965e7e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 5
+  maxhealth: 10
   healthUI: {fileID: 7795758529896866041}
   healthBar: {fileID: 9083244659998593577}
   destroyThis: {fileID: 4664383075521161566}
