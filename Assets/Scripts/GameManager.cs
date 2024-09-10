@@ -8,11 +8,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI roundText;
     public GameObject UpgradeUI;
-    public MoveCloud cloud;
     public Transform cloudTransform;
+
+    // STUFF TO DISABLE AND ENABLE
     public GameObject rain;
-    public GameObject lightning;
-    public GameObject flooding;
+    public MoveCloud cloud;
+    public GameObject upgrades;
 
     public GameObject endPanel;
 
@@ -40,8 +41,7 @@ public class GameManager : MonoBehaviour
         cloud.enabled = true;
         timer = roundTime;
         rain.SetActive(true);
-        lightning.SetActive(true);
-        flooding.SetActive(true);
+        upgrades.SetActive(true);
     }
 
     void EndRound()
@@ -50,15 +50,14 @@ public class GameManager : MonoBehaviour
         cloud.enabled = false;
         cloud.body.velocity = Vector3.zero;
         rain.SetActive(false);
-        lightning.SetActive(false);
-        flooding.SetActive(false);
+        upgrades.SetActive(false);
 
-        if (round < rounds)
-        {
-            round++;
-            UpgradeUI.SetActive(true);
-            return;
-        }
+        //if (round < rounds)
+        //{
+        //    round++;
+        //    UpgradeUI.SetActive(true);
+        //    return;
+        //}
 
         endPanel.SetActive(true);
     }

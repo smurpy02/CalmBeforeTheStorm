@@ -10,7 +10,7 @@ public class ToggleLightning : MonoBehaviour
 
     public GameObject lightning;
 
-    void Start()
+    void OnEnable()
     {
         StartCoroutine(ToggleLightningStrikes());
     }

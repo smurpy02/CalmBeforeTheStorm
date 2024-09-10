@@ -1,6 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
+[Serializable]
+public class Upgrade
+{
+    public string name;
+    public string particles;
+    public GameObject upgrade;
+    public UpgradeBar upgradeBar;
+    public float timeLimit;
+}
 
 public class CloudUpgradesManager : MonoBehaviour
 {
@@ -13,52 +28,46 @@ public class CloudUpgradesManager : MonoBehaviour
      * Hurricane - Increase Speed
     */
 
-    public Transform rainArea;
-    public List<Transform> rainParticles;
+    public static CloudUpgradesManager instance;
+    public List<Upgrade> upgradesAvailable = new List<Upgrade>();
+    public static List<Upgrade> upgrades = new List<Upgrade>();
 
-    public GameObject heavyRainParts;
-    public DoDamage rainDamage;
-    public float heavyRainDamage;
+    public GameObject upgradePickup;
+    public float spawnRadius;
 
-    public GameObject lightning;
+    void Start()
+    {
+        instance = this;
+        StartCoroutine(SpawnUpgrades());
 
-    public GameObject flooding;
+        foreach(Upgrade upgrade in upgradesAvailable)
+        {
+            upgrade.upgradeBar.upgrade = upgrade;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(UpgradeManager.upgrades.Contains("Larger Cloud"))
+        foreach (Upgrade upgrade in upgradesAvailable)
         {
-            Vector3 scale = Vector3.one;
-            scale.x = 2;
-            scale.z = 2;
-            rainArea.transform.localScale = scale;
-
-            foreach(Transform rain in rainParticles)
+            if (upgrade.upgrade != null)
             {
-                rain.localScale = Vector3.Lerp(rain.localScale, Vector3.one * 2, Time.deltaTime);
+                upgrade.upgrade.SetActive(upgrades.Contains(upgrade));
+                upgrade.upgradeBar.gameObject.SetActive(upgrades.Contains(upgrade));
             }
         }
+    }
 
-        if(UpgradeManager.upgrades.Contains("Heavy Rain"))
-        {
-            heavyRainParts.SetActive(true);
-            rainDamage.damage = heavyRainDamage;
-        }
+    IEnumerator SpawnUpgrades()
+    {
+        Vector3 spawnPosition = transform.position + Random.insideUnitSphere * Random.Range(0, spawnRadius);
+        spawnPosition.y = transform.position.y;
 
-        if (UpgradeManager.upgrades.Contains("Lightning"))
-        {
-            lightning.SetActive(true);
-        }
+        Instantiate(upgradePickup, spawnPosition, Quaternion.identity);
 
-        if (UpgradeManager.upgrades.Contains("Flooding"))
-        {
-            flooding.SetActive(true);
-        }
+        yield return new WaitForSeconds(Random.Range(15, 25));
 
-        if (UpgradeManager.upgrades.Contains("Fire"))
-        {
-
-        }
+        StartCoroutine(SpawnUpgrades());
     }
 }

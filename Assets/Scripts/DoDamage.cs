@@ -43,7 +43,6 @@ public class DoDamage : MonoBehaviour
     {
         if (destructable != null)
         {
-            Debug.Log("Found Destructable");
             destructable.Damage(damageAmount);
 
             if (type == DamageType.Instance) Destroy(gameObject);
