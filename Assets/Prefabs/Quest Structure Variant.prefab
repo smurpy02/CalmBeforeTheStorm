@@ -265,6 +265,7 @@ MonoBehaviour:
   scoreForDestroying: 15
   spawnOnDestroy: {fileID: 4822295462170915241, guid: 14930fad89681ca42afabf8e15b5f4d0, type: 3}
   building: {fileID: 169543733469337386}
+  damageSound: {fileID: 8252994309243186568}
   description: Auto Service
   target: {fileID: 8094855470202557547}
   targetIndicator: {fileID: 203803993859826682}
@@ -272,5 +273,10 @@ MonoBehaviour:
 --- !u!1 &8094855470202557547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4664383075521161566, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
+  m_PrefabInstance: {fileID: 3525618775670226229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8252994309243186568 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4784235684334915773, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
   m_PrefabInstance: {fileID: 3525618775670226229}
   m_PrefabAsset: {fileID: 0}

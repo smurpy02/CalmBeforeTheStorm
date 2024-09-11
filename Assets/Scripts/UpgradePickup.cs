@@ -8,6 +8,8 @@ public class UpgradePickup : MonoBehaviour
 {
     Upgrade upgrade;
 
+    public GameObject powerup;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class UpgradePickup : MonoBehaviour
         if(other.tag == "Player")
         {
             Debug.Log("got upgrade " + upgrade.name);
+            Instantiate(powerup, transform.position, Quaternion.identity);
+            CloudUpgradesManager.upgrades.Remove(upgrade);
             CloudUpgradesManager.upgrades.Add(upgrade);
             Destroy(gameObject);
         }

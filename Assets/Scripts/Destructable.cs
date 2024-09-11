@@ -12,6 +12,7 @@ public class Destructable : MonoBehaviour
     public int scoreForDestroying;
     public GameObject spawnOnDestroy;
     public Transform building;
+    public AudioSource damageSound;
 
     float health;
 
@@ -23,6 +24,11 @@ public class Destructable : MonoBehaviour
 
     public void Damage(float damage)
     {
+        if (!damageSound.isPlaying)
+        {
+            damageSound.Play();
+        }
+
         building.DOShakePosition(0.15f, damage * 0.8f);
 
         health -= damage;
