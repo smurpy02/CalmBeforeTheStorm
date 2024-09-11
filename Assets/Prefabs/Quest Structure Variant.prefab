@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 20}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7812188957938506739
@@ -265,7 +265,7 @@ MonoBehaviour:
   scoreForDestroying: 15
   spawnOnDestroy: {fileID: 4822295462170915241, guid: 14930fad89681ca42afabf8e15b5f4d0, type: 3}
   building: {fileID: 169543733469337386}
-  description: Destroy The Auto Service
+  description: Auto Service
   target: {fileID: 8094855470202557547}
   targetIndicator: {fileID: 203803993859826682}
   additionalQuestScore: 30

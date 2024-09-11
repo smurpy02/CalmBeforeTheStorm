@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
         playerPosition.y = position.y;
 
         transform.rotation = cameraFollowPoint.rotation;
-        transform.position = Vector3.Lerp(position, playerPosition, Time.deltaTime * 0.8f);
+        transform.position = Vector3.Lerp(position, playerPosition, Time.deltaTime * 1f);
 
         Vector2 movement = move.action.ReadValue<Vector2>();
 

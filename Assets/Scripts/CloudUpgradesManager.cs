@@ -61,7 +61,7 @@ public class CloudUpgradesManager : MonoBehaviour
 
     IEnumerator SpawnUpgrades()
     {
-        Vector3 spawnPosition = transform.position + Random.insideUnitSphere * Random.Range(0, spawnRadius);
+        Vector3 spawnPosition = transform.position + Random.insideUnitSphere * spawnRadius;
         spawnPosition.y = transform.position.y;
 
         Instantiate(upgradePickup, spawnPosition, Quaternion.identity);
