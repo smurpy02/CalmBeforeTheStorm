@@ -30558,7 +30558,7 @@ MonoBehaviour:
   cameraPivot: {fileID: 1784884693}
   cameraTransform: {fileID: 963194228}
   followDistance: 30
-  mouseSensitivity: 90
+  mouseSensitivity: 15
   freeViewZoomScale: 1.5
   move: {fileID: 459537538377922922, guid: b3f61c0e9a3bbdb4e96ebfc27fc72249, type: 3}
   freeview: {fileID: 8766912759380435382, guid: b3f61c0e9a3bbdb4e96ebfc27fc72249, type: 3}
