@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //SANDBOX STUFF
+    bool sandbox = false;
+
+    public CloudUpgradesManager upgradeManager;
+    //--------//
+
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI roundText;
     public GameObject UpgradeUI;
@@ -16,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject upgrades;
 
     public GameObject endPanel;
+    //--------//
 
     public float gameTime;
 
@@ -42,6 +49,14 @@ public class GameManager : MonoBehaviour
         timer = gameTime;
         rain.SetActive(true);
         upgrades.SetActive(true);
+
+        if (sandbox)
+        {
+            timerText.gameObject.SetActive(false);
+            timer = 2000;
+            upgradeManager.minSpawnTime = 2;
+            upgradeManager.maxSpawnTime = 3;
+        }
     }
 
     void EndRound()
@@ -58,7 +73,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        timer -= Time.deltaTime;
+        if(!sandbox) timer -= Time.deltaTime;
         timer = Mathf.Clamp(timer, 0, Mathf.Infinity);
         timerText.text = timer.ToString("0.0");
 
@@ -66,5 +81,10 @@ public class GameManager : MonoBehaviour
         {
             EndRound();
         }
+    }
+
+    public void SetGameModeSandbox(bool isSandbox)
+    {
+        sandbox = isSandbox;
     }
 }

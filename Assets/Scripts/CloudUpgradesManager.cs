@@ -35,6 +35,9 @@ public class CloudUpgradesManager : MonoBehaviour
     public GameObject upgradePickup;
     public float spawnRadius;
 
+    public float minSpawnTime = 15;
+    public float maxSpawnTime = 25;
+
     void Start()
     {
         instance = this;
@@ -66,7 +69,7 @@ public class CloudUpgradesManager : MonoBehaviour
 
         Instantiate(upgradePickup, spawnPosition, Quaternion.identity);
 
-        yield return new WaitForSeconds(Random.Range(15, 25));
+        yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
 
         StartCoroutine(SpawnUpgrades());
     }

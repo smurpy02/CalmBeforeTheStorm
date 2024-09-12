@@ -29,13 +29,23 @@ public class Destructable : MonoBehaviour
             damageSound.Play();
         }
 
-        building.DOShakePosition(0.15f, damage * 0.8f);
+        StartCoroutine(Shake(damage * 0.8f));
 
         health -= damage;
 
         if (health <= 0) SelfDestruct();
 
         UpdateHealthBar();
+    }
+
+    IEnumerator Shake(float strength)
+    {
+        yield return building.DOShakePosition(0.15f, strength, 10, 90, false, true, ShakeRandomnessMode.Harmonic).WaitForCompletion();
+
+        Vector3 position = building.localPosition;
+        position.y = 0;
+
+        building.DOLocalMove(position, 0.1f);
     }
 
     public void SelfDestruct()
