@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
 
     public void StartNewRound()
     {
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
         isPlaying = true;
         cloud.enabled = true;
         timer = gameTime;
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     void EndRound()
     {
+        Cursor.visible = true;
         isPlaying = false;
         cloud.enabled = false;
         cloud.body.velocity = Vector3.zero;
