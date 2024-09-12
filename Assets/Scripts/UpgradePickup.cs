@@ -28,10 +28,8 @@ public class UpgradePickup : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("got upgrade " + upgrade.name);
             Instantiate(powerup, transform.position, Quaternion.identity);
-            CloudUpgradesManager.upgrades.Remove(upgrade);
-            CloudUpgradesManager.upgrades.Add(upgrade);
+            CloudUpgradesManager.AddUpgrade(upgrade);
             Destroy(gameObject);
         }
     }

@@ -70,4 +70,11 @@ public class CloudUpgradesManager : MonoBehaviour
 
         StartCoroutine(SpawnUpgrades());
     }
+
+    public static void AddUpgrade(Upgrade upgrade)
+    {
+        upgrades.Add(upgrade);
+        upgrade.upgradeBar.gameObject.SetActive(false);
+        upgrade.upgradeBar.gameObject.SetActive(true);
+    }
 }
