@@ -14,12 +14,15 @@ public class Destructable : MonoBehaviour
     public Transform building;
     public AudioSource damageSound;
 
+    Transform cam;
+
     float health;
 
     void Awake()
     {
         health = maxhealth;
         UpdateHealthBar();
+        cam = Camera.main.transform;
     }
 
     public void Damage(float damage)
@@ -50,6 +53,7 @@ public class Destructable : MonoBehaviour
 
     public void SelfDestruct()
     {
+        cam.DOShakePosition(0.2f, 0.2f);
         Instantiate(spawnOnDestroy, transform.position, Quaternion.identity);
         ScoreKeeper.IncreaseScore(scoreForDestroying);
         Destroy(destroyThis);

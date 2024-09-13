@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4664383075521161566, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
       propertyPath: m_Name
-      value: Car Variant
+      value: Car
       objectReference: {fileID: 0}
     - target: {fileID: 7192109625890471122, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
       propertyPath: m_LocalScale.x
@@ -89,9 +89,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5939488954891541963}
     - target: {fileID: 8214584162184158255, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
-      propertyPath: maxhealth
-      value: 350
-      objectReference: {fileID: 0}
+      propertyPath: spawnOnDestroy
+      value: 
+      objectReference: {fileID: 3538164609138999417, guid: 09510d48e7345304ba13e255c6af5527, type: 3}
     - target: {fileID: 8214584162184158255, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
       propertyPath: scoreForDestroying
       value: 10

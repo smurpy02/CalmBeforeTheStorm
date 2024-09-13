@@ -82,6 +82,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6566582542366130189, guid: 2ab801184b62b5247ae7ba76527b7abd, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1646
+      objectReference: {fileID: 0}
     - target: {fileID: 7101615587375012795, guid: 2ab801184b62b5247ae7ba76527b7abd, type: 3}
       propertyPath: m_Name
       value: Small Rubble
@@ -144,6 +148,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -15
       objectReference: {fileID: 0}
+    - target: {fileID: 6566582542366130189, guid: 2ab801184b62b5247ae7ba76527b7abd, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1646
+      objectReference: {fileID: 0}
     - target: {fileID: 7101615587375012795, guid: 2ab801184b62b5247ae7ba76527b7abd, type: 3}
       propertyPath: m_Name
       value: Small Rubble (1)
@@ -205,6 +213,10 @@ PrefabInstance:
     - target: {fileID: 288689968623882070, guid: 2ab801184b62b5247ae7ba76527b7abd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566582542366130189, guid: 2ab801184b62b5247ae7ba76527b7abd, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1646
       objectReference: {fileID: 0}
     - target: {fileID: 7101615587375012795, guid: 2ab801184b62b5247ae7ba76527b7abd, type: 3}
       propertyPath: m_Name
