@@ -10,7 +10,7 @@ public class EndPanelManager : MonoBehaviour
 
     void OnEnable()
     {
-        scoreText.text = ScoreKeeper.GetScore().ToString("0");
+        scoreText.text = "YOUR SCORE: " + ScoreKeeper.GetScore().ToString("0") + "\nHIGH SCORE: " + ScoreKeeper.GetHighScore().ToString("0");
     }
 
     public void Retry()

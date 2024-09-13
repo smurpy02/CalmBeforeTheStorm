@@ -7,14 +7,13 @@ public class GameManager : MonoBehaviour
 {
     //SANDBOX STUFF
     bool sandbox = false;
+    public static bool isSandbox { get { return FindObjectOfType<GameManager>().sandbox; } }
 
     public CloudUpgradesManager upgradeManager;
     //--------//
 
     public TextMeshProUGUI timerText;
-    public TextMeshProUGUI roundText;
-    public GameObject UpgradeUI;
-    public Transform cloudTransform;
+    public Transform timerBar;
 
     // STUFF TO DISABLE AND ENABLE
     public GameObject rain;
@@ -76,6 +75,9 @@ public class GameManager : MonoBehaviour
         if(!sandbox) timer -= Time.deltaTime;
         timer = Mathf.Clamp(timer, 0, Mathf.Infinity);
         timerText.text = timer.ToString("0.0");
+        Vector3 scale = Vector3.one;
+        scale.x = timer / gameTime;
+        timerBar.localScale = scale;
 
         if (timer <= 0 && isPlaying)
         {
