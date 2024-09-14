@@ -19,8 +19,15 @@ public class Destructable : MonoBehaviour
 
     float health;
 
+    float startY;
+
     void Awake()
     {
+        if (destroyThis == null) destroyThis = gameObject;
+        if (building == null) building = transform;
+
+        startY = building.localPosition.y;
+
         health = maxhealth;
         UpdateHealthBar();
         cam = Camera.main.transform;
@@ -28,9 +35,12 @@ public class Destructable : MonoBehaviour
 
     public void Damage(float damage)
     {
-        if (!damageSound.isPlaying)
+        if (damageSound != null)
         {
-            damageSound.Play();
+            if (!damageSound.isPlaying)
+            {
+                damageSound.Play();
+            }
         }
 
         StartCoroutine(Shake(damage * 0.8f));
@@ -47,7 +57,7 @@ public class Destructable : MonoBehaviour
         yield return building.DOShakePosition(0.15f, strength, 10, 90, false, true, ShakeRandomnessMode.Harmonic).WaitForCompletion();
 
         Vector3 position = building.localPosition;
-        position.y = 0;
+        position.y = startY;
 
         building.DOLocalMove(position, 0.1f);
     }
