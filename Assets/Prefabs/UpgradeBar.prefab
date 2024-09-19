@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4996445996917440019}
   - component: {fileID: 2509345442799725508}
   m_Layer: 5
-  m_Name: Upgrade
+  m_Name: UpgradeBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

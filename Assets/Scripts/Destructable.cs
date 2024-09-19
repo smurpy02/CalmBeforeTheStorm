@@ -6,19 +6,24 @@ using UnityEngine;
 
 public class Destructable : MonoBehaviour
 {
+    [Header("Health")]
     public float maxhealth;
     public GameObject healthUI;
     public Transform healthBar;
+
+    [Header("Physical Affects")]
     public GameObject destroyThis;
-    public int scoreForDestroying;
     public GameObject spawnOnDestroy;
     public Transform building;
+
     public AudioSource damageSound;
+
+    [Header("Score")]
+    public int scoreForDestroying;
 
     Transform cam;
 
     float health;
-
     float startY;
 
     void Awake()

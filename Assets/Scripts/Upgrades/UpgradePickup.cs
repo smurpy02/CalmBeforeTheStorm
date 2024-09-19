@@ -13,7 +13,7 @@ public class UpgradePickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        upgrade = CloudUpgradesManager.instance.upgradesAvailable[Random.Range(0, CloudUpgradesManager.instance.upgradesAvailable.Count)];
+        upgrade = CloudUpgradesManager.GetRandomAvailableUpgrade();
 
         foreach(ParticleSystem particles in GetComponentsInChildren<ParticleSystem>(true))
         {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloodMove : MonoBehaviour
+public class FloodPowerup : MonoBehaviour
 {
     List<Transform> flooded = new List<Transform>();
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnFire : MonoBehaviour
+public class FirePowerup : MonoBehaviour
 {
     public GameObject fire;
 
@@ -17,7 +17,7 @@ public class SpawnFire : MonoBehaviour
                 Vector3 spawnPosition = other.transform.position;
                 spawnPosition.y += other.transform.localScale.y / 2;
 
-                Vector3 randomOffset = Random.insideUnitSphere;
+                Vector3 randomOffset = Random.insideUnitSphere * 3;
                 randomOffset.y = 0;
                 randomOffset.x *= other.transform.localScale.x / 2;
                 randomOffset.z *= other.transform.localScale.z / 2;

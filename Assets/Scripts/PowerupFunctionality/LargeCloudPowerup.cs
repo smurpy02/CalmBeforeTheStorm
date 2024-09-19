@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IncreaseCloudSize : MonoBehaviour
+public class LargeCloudPowerup : MonoBehaviour
 {
     public List<Transform> enlarge;
 
@@ -13,7 +13,7 @@ public class IncreaseCloudSize : MonoBehaviour
         {
             t.DOScaleX(t.localScale.x * 2, 1);
             t.DOScaleZ(t.localScale.z * 2, 1);
-            t.DOScaleY(t.localScale.y * 1.5f, 1);
+            t.DOScaleY(t.localScale.y * 1.1f, 1);
         }
     }
     void OnDisable()
@@ -22,7 +22,7 @@ public class IncreaseCloudSize : MonoBehaviour
         {
             t.DOScaleX(t.localScale.x / 2, 1);
             t.DOScaleZ(t.localScale.z / 2, 1);
-            t.DOScaleY(t.localScale.y / 1.5f, 1);
+            t.DOScaleY(t.localScale.y / 1.1f, 1);
         }
     }
 }

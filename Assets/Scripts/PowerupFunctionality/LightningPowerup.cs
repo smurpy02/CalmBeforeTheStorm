@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class ToggleLightning : MonoBehaviour
+public class LightningPowerup : MonoBehaviour
 {
     public float minBetweenStrikes;
     public float maxBetweenStrikes;
     public float strikeTime;
 
     public GameObject lightning;
+    public GameObject lightningParticles;
 
     void OnEnable()
     {
@@ -21,6 +24,7 @@ public class ToggleLightning : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         lightning.SetActive(true);
+        Instantiate(lightningParticles, transform.position, transform.rotation);
 
         yield return new WaitForSeconds(strikeTime);
 

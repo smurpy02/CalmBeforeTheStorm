@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Quest : Destructable
+public class Quest : MonoBehaviour
 {
+    [Header("Quest Description")]
     public string description;
+
+    [Header("Related Objects")]
     public GameObject target;
     public GameObject targetIndicator;
-    public int additionalQuestScore;
+    public GameObject scoreBonus;
 
+    [Header("Score Stuff")]
+    public int additionalQuestScore;
+    public Destructable destructable;
     public TextMeshProUGUI score;
 
-    public GameObject scoreBonus;
 
     void Start()
     {
-        score.text = "+" + (scoreForDestroying + additionalQuestScore).ToString("0");
+        score.text = "+" + (destructable.scoreForDestroying + additionalQuestScore).ToString("0");
     }
 }

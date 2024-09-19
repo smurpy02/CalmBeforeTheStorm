@@ -80,4 +80,9 @@ public class CloudUpgradesManager : MonoBehaviour
         upgrade.upgradeBar.gameObject.SetActive(false);
         upgrade.upgradeBar.gameObject.SetActive(true);
     }
+
+    public static Upgrade GetRandomAvailableUpgrade()
+    {
+        return instance.upgradesAvailable[Random.Range(0, CloudUpgradesManager.instance.upgradesAvailable.Count)];
+    }
 }

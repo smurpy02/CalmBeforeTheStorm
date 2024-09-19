@@ -479,8 +479,15 @@ PrefabInstance:
       propertyPath: building
       value: 
       objectReference: {fileID: 169543733469337386}
-    m_RemovedComponents:
-    - {fileID: 8214584162184158255, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
+    - target: {fileID: 8214584162184158255, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
+      propertyPath: maxhealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214584162184158255, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
+      propertyPath: scoreForDestroying
+      value: 25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8811450353544972515, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
     m_AddedGameObjects:
@@ -492,7 +499,7 @@ PrefabInstance:
       addedObject: {fileID: 4843270383621240379}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6830868780960546405, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
-      insertIndex: -1
+      insertIndex: 5
       addedObject: {fileID: 7421077581061388106}
   m_SourcePrefab: {fileID: 100100000, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
 --- !u!4 &1307158849368454633 stripped
@@ -505,16 +512,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 799736718359115650, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
   m_PrefabInstance: {fileID: 3525618775670226229}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &5684573506699489052 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9083244659998593577, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
+--- !u!114 &4822672803722174746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8214584162184158255, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
   m_PrefabInstance: {fileID: 3525618775670226229}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6691674549986794956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7795758529896866041, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
-  m_PrefabInstance: {fileID: 3525618775670226229}
-  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7935797114933609296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe686f1dc595daa4ea64bbbb965e7e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7935797114933609296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6830868780960546405, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
@@ -532,27 +540,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e42228e82ddf740bebf443ec735545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 28
-  healthUI: {fileID: 6691674549986794956}
-  healthBar: {fileID: 5684573506699489052}
-  destroyThis: {fileID: 8094855470202557547}
-  scoreForDestroying: 15
-  spawnOnDestroy: {fileID: 4822295462170915241, guid: 14930fad89681ca42afabf8e15b5f4d0, type: 3}
-  building: {fileID: 169543733469337386}
-  damageSound: {fileID: 8252994309243186568}
   description: Auto Service
   target: {fileID: 8094855470202557547}
   targetIndicator: {fileID: 203803993859826682}
-  additionalQuestScore: 30
-  score: {fileID: 6348917948387974127}
   scoreBonus: {fileID: 7271112862535003257, guid: 05d98739c3ad34d4ba432cc908d27e6c, type: 3}
+  additionalQuestScore: 30
+  destructable: {fileID: 4822672803722174746}
+  score: {fileID: 6348917948387974127}
 --- !u!1 &8094855470202557547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4664383075521161566, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
-  m_PrefabInstance: {fileID: 3525618775670226229}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &8252994309243186568 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4784235684334915773, guid: 8a28cdb6497e068458a3fd18b0be3c21, type: 3}
   m_PrefabInstance: {fileID: 3525618775670226229}
   m_PrefabAsset: {fileID: 0}

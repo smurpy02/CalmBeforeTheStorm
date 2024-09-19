@@ -294,10 +294,10 @@ MonoBehaviour:
   healthUI: {fileID: 7795758529896866041}
   healthBar: {fileID: 9083244659998593577}
   destroyThis: {fileID: 4664383075521161566}
-  scoreForDestroying: 5
   spawnOnDestroy: {fileID: 4822295462170915241, guid: 14930fad89681ca42afabf8e15b5f4d0, type: 3}
   building: {fileID: 8811450353545270467}
   damageSound: {fileID: 4784235684334915773}
+  scoreForDestroying: 5
 --- !u!82 &4784235684334915773
 AudioSource:
   m_ObjectHideFlags: 0

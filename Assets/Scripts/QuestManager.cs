@@ -67,7 +67,7 @@ public class QuestManager : MonoBehaviour
                 }
                 else
                 {
-                    questString += quest.description + " | " + (quest.scoreForDestroying + quest.additionalQuestScore) + "\n";
+                    questString += quest.description + " | " + (quest.destructable.scoreForDestroying + quest.additionalQuestScore) + "\n";
                     quest.targetIndicator.SetActive(true);
                 }
             }
