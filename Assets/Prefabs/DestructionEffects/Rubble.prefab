@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 6184147343795739341}
   - component: {fileID: 1591432110584839534}
   - component: {fileID: 4887623216744430564}
+  - component: {fileID: 3975281752316719590}
   m_Layer: 0
   m_Name: Rubble
   m_TagString: Untagged
@@ -663,7 +664,19 @@ MonoBehaviour:
   healthUI: {fileID: 6684944935234531534}
   healthBar: {fileID: 5797565201970705016}
   destroyThis: {fileID: 8924596816969697853}
-  scoreForDestroying: 0
   spawnOnDestroy: {fileID: 9101103173634713078, guid: eca4b57c8294a144d9a73301fa878f56, type: 3}
   building: {fileID: 2113641479931518672}
   damageSound: {fileID: 7623594397025788136}
+  scoreForDestroying: 0
+--- !u!114 &3975281752316719590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8924596816969697853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107960ff902416747a23419a8ea4c933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
