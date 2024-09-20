@@ -43,11 +43,13 @@ public class CameraFollow : MonoBehaviour
 
         Vector3 cameraTargetPosition = cameraLocalPosition;
 
-        if(freeview.action.IsPressed())
+        float delta = -mouseAxis.action.ReadValue<Vector2>().x;
+
+        if (delta != 0)
         {
-            rotation.y -= mouseAxis.action.ReadValue<Vector2>().x * Time.deltaTime * mouseSensitivity;
+            rotation.y -= delta * Time.deltaTime * mouseSensitivity;
             cameraTargetPosition = cameraLocalPosition * freeViewZoomScale;
         }
-            cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraTargetPosition, Time.deltaTime * 2);
+        cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, cameraTargetPosition, Time.deltaTime * 2);
     }
 }

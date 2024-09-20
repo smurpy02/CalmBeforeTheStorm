@@ -100,8 +100,19 @@
                 },
                 {
                     "name": "",
-                    "id": "099797ba-7d43-4565-8de6-d2dfa513cd9a",
-                    "path": "<Mouse>/rightButton",
+                    "id": "c60dbb5d-c1c8-42d3-9ec2-0481ec16cd4d",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a4c2ba72-8176-40b8-b01b-a58ecc358e1b",
+                    "path": "<Gamepad>/rightStick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -111,8 +122,8 @@
                 },
                 {
                     "name": "",
-                    "id": "50590404-e243-456e-8010-4bd98c652ba9",
-                    "path": "<Mouse>/delta",
+                    "id": "f7dbcdb4-1fa7-4404-8e9e-0125c8641004",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
