@@ -19,8 +19,13 @@ public class MuteMusic : MonoBehaviour
     {
         if (mute.action.WasPressedThisFrame())
         {
-            muted = !muted;
-            musicSource.volume = muted ? 0 : 0.2f;
+            ToggleMute();
         }
+    }
+
+    public void ToggleMute()
+    {
+        muted = !muted;
+        musicSource.volume = muted ? 0 : 0.2f;
     }
 }
